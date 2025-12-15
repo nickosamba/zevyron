@@ -1,0 +1,73 @@
+{% load static %}
+<div class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+            <!-- Logo + Description -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                     <!-- <svg viewBox="0 0 100 100" class="h-10 w-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 25 L80 25 L80 35 L35 85 L20 85 L20 75 L65 25 Z" fill="#1166EE" />
+                        <path d="M20 25 L45 25 L80 65 L80 75 L35 25 Z" fill="#FFAA11" />
+                    </svg> -->
+                    <img src="{% static 'zevyron-logo.webp' %}" alt="Logo officiel de zevyron" class="h-10 w-10">
+                    <span class="font-display font-bold text-2xl text-gradient">
+                        ZEVYRON
+                    </span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Agence digitale basée au Congo, spécialisée en création de sites web,
+                    applications mobiles et solutions numériques innovantes.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h3 class="text-white font-display font-semibold text-lg mb-4">Navigation</h3>
+                <ul class="space-y-2 text-slate-400 text-sm">
+                    <li><a href="{% url 'home'%}" class="hover:text-primary transition">Accueil</a></li>
+                    <li><a href="{% url 'abouts'%}" class="hover:text-primary transition">A propos</a></li>
+                    <li><a href="{% url 'services'%}" class="hover:text-primary transition">Services</a></li>
+                    <li><a href="{% url 'equipes'%}" class="hover:text-primary transition">Équipe</a></li>
+                    <li><a href="{% url 'chartes'%}" class="hover:text-primary transition">Identité</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="text-white font-display font-semibold text-lg mb-4">Services</h3>
+                <ul class="space-y-2 text-slate-400 text-sm">
+                    <li>Développement Web</li>
+                    <li>Applications Mobiles/Pwa</li>
+                    <li>Cloud & SaaS</li>
+                    <li>Intelligence Artificielle</li>
+                    <li>Consulting IT</li>
+                    <li>UI/UX Design</li>
+                    <li>Maintenance & Support</li>
+                    <li>SEO</li>
+                    <li>Transformation Digitale</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="text-white font-display font-semibold text-lg mb-4">Contact</h3>
+                <ul class="space-y-2 text-slate-400 text-sm">
+                    <li>Email : zevyron@gmail.com</li>
+                    <li>Téléphone : +242 068736846</li>
+                    <li>Brazzaville, Congo</li>
+                </ul>
+
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="text-slate-400 hover:text-primary transition bg-white/5 p-2 rounded-full"><i data-lucide="facebook" class="h-5 w-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-primary transition bg-white/5 p-2 rounded-full"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-primary transition bg-white/5 p-2 rounded-full"><i data-lucide="linkedin" class="h-5 w-5"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 py-8 text-center text-slate-500 text-sm flex flex-col md:flex-row justify-center items-center gap-2">
+            <span>&copy; 2025 Zevyron Inc. Tous droits réservés.</span>
+            <span class="hidden md:inline">•</span>
+            <span class="flex items-center gap-1">Fait avec <i data-lucide="heart" class="h-3 w-3 text-red-500 fill-red-500"></i> par l'équipe Zevyron</span>
+        </div>

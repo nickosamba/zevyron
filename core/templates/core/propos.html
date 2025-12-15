@@ -1,0 +1,162 @@
+{% extends "./base.html" %}
+
+{% block title %}À propos de Zevyron — Agence digitale au Congo{% endblock %}
+{% block meta_description %}
+Découvrez l’histoire, la mission et la vision de Zevyron, une agence digitale au Congo spécialisée dans les solutions web et mobiles.
+{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <!-- HERO ABOUT -->
+    <section class="relative min-h-[70vh] flex items-center justify-center pt-24 overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-[-20%] left-[-10%] w-[40%] h-[40%] bg-primary/20 blur-[140px] rounded-full"></div>
+            <div class="absolute bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-secondary/20 blur-[140px] rounded-full"></div>
+        </div>
+
+        <h1 class="sr-only">À propos de Zevyron, agence digitale au Congo spécialisée en solutions web et mobiles</h1>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <span class="reveal text-secondary font-mono text-sm tracking-widest uppercase block mb-4">
+                À propos de Zevyron
+            </span>
+
+            <h1 class="reveal text-5xl md:text-7xl font-display font-black tracking-tight mb-6">
+                <span class="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
+                    Construire le futur
+                </span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                    par la technologie
+                </span>
+            </h1>
+
+            <p class="reveal max-w-3xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed">
+                Zevyron est une start-up technologique basée au Congo, spécialisée dans la création de solutions numériques innovantes, fiables et évolutives.  
+                Nous allons <span class="text-white font-semibold">plus loin que le possible</span>.
+            </p>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="py-32 relative">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <h2 class="sr-only">Notre histoire, mission et vision</h2>
+
+            <div class="reveal">
+                <span class="text-secondary font-mono text-sm tracking-widest uppercase mb-3 block">
+                    Notre Histoire
+                </span>
+
+                <h2 class="text-4xl font-display font-bold text-white mb-6">
+                    Une vision née d’un constat
+                </h2>
+
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Zevyron n’est pas née d’un simple projet, mais d’une frustration devenue vision.
+                    Trop d’idées ambitieuses échouent faute de solutions numériques solides et
+                    pensées pour durer.
+                </p>
+
+                <p class="text-slate-400 text-lg leading-relaxed mb-6">
+                    Nous avons vu des projets prometteurs freinés par des technologies mal adaptées,
+                    sans vision stratégique ni fondations fiables.
+                </p>
+
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Zevyron est née pour répondre à cette question essentielle :
+                    <span class="text-white font-semibold">
+                        comment aller plus loin que le possible grâce à la technologie ?
+                    </span>
+                </p>
+            </div>
+
+
+            <div class="reveal glass-card rounded-3xl p-10 tech-border">
+                <h3 class="text-2xl font-bold text-white mb-6">Ce qui nous définit</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <span class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                            <i data-lucide="zap"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-semibold text-white">Innovation continue</h4>
+                            <p class="text-slate-400 text-sm">
+                                Toujours anticiper, jamais suivre.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex items-start gap-4">
+                        <span class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
+                            <i data-lucide="shield-check"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-semibold text-white">Fiabilité & sécurité</h4>
+                            <p class="text-slate-400 text-sm">
+                                Des solutions robustes, sécurisées par design.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex items-start gap-4">
+                        <span class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="users"></i>
+                        </span>
+                        <div>
+                            <h4 class="font-semibold text-white">Collaboration</h4>
+                            <p class="text-slate-400 text-sm">
+                                Un partenariat réel avec nos clients.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MISSION / VISION -->
+    <section class="py-32 bg-white/5 border-y border-white/10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            <div class="reveal glass-card rounded-3xl p-10">
+                <h3 class="text-3xl font-bold text-white mb-4">Notre Mission</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Concevoir des solutions numériques intelligentes, performantes et accessibles
+                    qui transforment durablement les entreprises et les communautés.
+                </p>
+            </div>
+
+            <div class="reveal glass-card rounded-3xl p-10">
+                <h3 class="text-3xl font-bold text-white mb-4">Notre Vision</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Devenir une référence technologique africaine et internationale,
+                    capable de repousser les limites du possible grâce à l’innovation.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24">
+        <div class="container mx-auto px-4 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+                Construisons l’avenir ensemble
+            </h2>
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+                Vous avez une idée, un projet ou une vision ?
+                Zevyron est prêt à la transformer en solution digitale concrète.
+            </p>
+            <a href="#" class="inline-flex items-center justify-center h-16 px-12 bg-primary text-white rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg shadow-primary/30">
+                Nous contacter
+            </a>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

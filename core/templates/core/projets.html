@@ -1,0 +1,81 @@
+{% extends "./base.html" %}
+{% block title %}Zevyron - Réalisations digitales au Congo{% endblock %}
+{% block meta_description %}
+Découvrez les réalisations digitales de Zevyron au Congo : sites web, applications mobiles, plateformes cloud et projets innovants conçus pour nos clients.
+{% endblock %}
+
+{% load static %}
+{% block content %}
+<main class="pt-28 sm:pt-32 lg:pt-40 pb-20 container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16 sm:mb-20 lg:mb-24 relative reveal">
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div class="w-[280px] h-[160px] sm:w-[420px] sm:h-[220px] lg:w-[600px] lg:h-[300px] bg-primary/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-4 sm:mb-6 backdrop-blur-md">
+            <i data-lucide="layers" class="w-4 h-4 text-secondary"></i>
+            <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-slate-300">Portfolio v1.0</span>
+        </div>
+        <h1 class="sr-only">Réalisations digitales de Zevyron au Congo : sites web, applications mobiles et solutions numériques</h1>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-7xl font-display font-black text-white mb-4 sm:mb-6">
+            Nos <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Réalisations</span>
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg lg:text-xl max-w-xl lg:max-w-2xl mx-auto">
+            Découvrez comment nous transformons des concepts audacieux en produits digitaux d'exception.
+        </p>
+    </div>
+    <h2 class="sr-only">Portfolio de projets web, mobiles et cloud réalisés par Zevyron</h2>
+
+    <!-- PROJECTS GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+            <!-- Project 1 -->
+             {% if projets%}
+            <div class="group reveal">
+                {% for projet in projets %}
+                <div class="glass-card rounded-[2rem] overflow-hidden tech-border relative h-full flex flex-col hover:border-primary/50 transition-colors duration-500">
+                    <div class="relative aspect-video overflow-hidden">
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-30 transition-opacity z-10 duration-500"></div>
+                        {% if projet.image%}
+                        <img src="{{projet.image.url}}" alt="{{ projet.titre }} — Projet digital réalisé par Zevyron" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        {% else %}
+                        <img src="{% static './zevyron-logo.png'%}" alt="le logo de Zevyron" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
+                        {% endif %}
+                        <div class="absolute top-4 right-4 z-20">
+                            <button class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md hover:bg-white hover:text-black border border-white/20 transition-all"><i data-lucide="external-link" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-secondary font-mono text-xs uppercase tracking-widest px-2 py-1 bg-secondary/10 rounded border border-secondary/20">{{projet.categorie | default:"Web"}}</span>
+                        </div>
+                        <h3 class="text-3xl font-display font-bold text-white mb-3 group-hover:text-primary transition-colors">{{projet.titre}}</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed mb-6 flex-grow">{{projet.description| default:"pas de description pour le moment"}}.</p>
+                        {% if projet.lien_demo %}
+                        <div class="flex items-center justify-between pt-6 border-t border-white/5 mt-auto">
+                            <a href="{{projet.lien_demo}}" target="_blank"><span class="text-white font-medium text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Voir le projet complet <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-center text-slate-400 col-span-full">Aucun projet à afficher pour le moment. Revenez bientôt !</p>
+            {% endif %}
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-24 sm:mt-32 text-center reveal">
+        <h2 class="sr-only">Contactez Zevyron pour votre projet digital</h2>
+        <p class="text-slate-400 mb-4 sm:mb-6">Vous avez un projet en tête ?</p>
+        <a href="{% url 'contact' %}" class="inline-block h-14 px-10 py-3 bg-white text-black hover:bg-slate-200 rounded-full text-lg font-bold transition-transform hover:scale-105">
+            Parlons de votre futur projet
+        </a>
+    </div>
+</main>
+{% endblock %}

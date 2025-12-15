@@ -1,0 +1,127 @@
+{% extends "./base.html" %}
+
+{% block title %}Zevyron - Solutions digitales{% endblock %}
+
+{% block content %}
+<main class="pt-32 md:pt-40 pb-24 container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center mb-16 md:mb-24 relative reveal">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] md:w-[600px] h-[150px] sm:h-[200px] md:h-[300px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-4 sm:mb-6 backdrop-blur-md">
+            <i data-lucide="tool" class="w-4 h-4 text-secondary"></i>
+            <span class="text-xs sm:text-sm font-mono uppercase tracking-widest text-slate-300">Services</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-4 sm:mb-6">
+            Nos <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Services</span>
+        </h1>
+        <p class="text-slate-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+            Des solutions technologiques innovantes pour propulser votre entreprise vers l’avenir.
+        </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
+        <!-- Développement Web -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="cpu" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Développement Web</h3>
+                    <p class="text-slate-400 text-lg">Sites web modernes, rapides et sécurisés, conçus pour offrir une expérience utilisateur optimale.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications Mobiles -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="smartphone" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Applications Mobiles/Pwa</h3>
+                    <p class="text-slate-400 text-lg">Développement d’applications iOS et Android performantes, intuitives et adaptées à vos besoins.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="cloud" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Cloud & DevOps</h3>
+                    <p class="text-slate-400 text-lg">Déploiement cloud, CI/CD, automatisation et optimisation de votre infrastructure numérique.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cybersécurité -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="shield" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Cybersécurité</h3>
+                    <p class="text-slate-400 text-lg">Protection avancée, audits de sécurité, gestion des risques et défense contre les cybermenaces.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intelligence Artificielle -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="bot" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Intelligence Artificielle</h3>
+                    <p class="text-slate-400 text-lg">Chatbots, automatisation, analyse intelligente et solutions IA adaptées à votre entreprise.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- UI/UX Design -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="layout" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">UI/UX Design</h3>
+                    <p class="text-slate-400 text-lg">Interfaces modernes, ergonomiques et centrées utilisateur pour maximiser l’engagement.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 7 : Infographie & Design Visuel -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="palette" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Infographie & Design Visuel</h3>
+                    <p class="text-slate-400 text-lg">
+                        Création de visuels professionnels, logos, affiches, bannières, infographies et identités visuelles pour renforcer l’image de votre marque.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Service : Formations Professionnelles -->
+        <div class="group reveal">
+            <div class="glass-card rounded-[2rem] overflow-hidden h-full flex flex-col hover:border-primary/50 transition-colors duration-500 p-8">
+                <div class="mb-6 text-center">
+                    <i data-lucide="graduation-cap" class="w-12 h-12 text-primary mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-2">Formations Professionnelles</h3>
+                    <p class="text-slate-400 text-lg">
+                        Sessions de formation en développement web, mobile/Pwa, IA, cybersécurité et design pour renforcer vos compétences ou celles de votre équipe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 md:mt-32 text-center reveal">
+        <p class="text-slate-400 mb-4 sm:mb-6">Prêt à donner vie à votre vision numérique ?</p>
+        <a href="#" class="inline-block h-12 sm:h-14 px-6 sm:px-10 py-3 bg-white text-black hover:bg-slate-200 rounded-full text-base sm:text-lg font-bold transition-transform hover:scale-105">
+            Contactez-nous dès aujourd'hui
+        </a>
+    </div>
+
+</main>
+{% endblock %}

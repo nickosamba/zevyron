@@ -1,0 +1,40 @@
+{% extends "./base.html" %}
+{% block title %}Erreur 404 - Page introuvable{% endblock %}
+
+{% block content %}
+<main class="pt-32 sm:pt-40 pb-20 container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16 relative reveal">
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div class="w-[300px] h-[200px] sm:w-[450px] sm:h-[260px] lg:w-[650px] lg:h-[350px] bg-red-500/10 blur-[120px] rounded-full"></div>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6 backdrop-blur-md">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-red-400"></i>
+            <span class="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-slate-300">
+                Erreur 404
+            </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-black text-white mb-4">
+            Page <span class="text-red-400">Introuvable</span>
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg lg:text-xl max-w-xl mx-auto">
+            Oups… La page que vous recherchez n’existe pas ou a été déplacée.
+        </p>
+    </div>
+
+    <div class="text-center reveal">
+        <a href="{% url 'home' %}"
+           class="inline-block h-12 sm:h-14 px-8 bg-primary hover:bg-blue-600 text-white rounded-xl font-bold text-base sm:text-lg transition-all hover:scale-[1.02] shadow-[0_0_40px_-10px_rgba(17,102,238,0.5)]">
+            Retour à l’accueil
+        </a>
+
+        <p class="text-slate-500 mt-6">
+            Besoin d’aide ? <a href="{% url 'contact' %}" class="text-primary hover:underline">Contactez-nous</a>
+        </p>
+    </div>
+
+</main>
+{% endblock %}

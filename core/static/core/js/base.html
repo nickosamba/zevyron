@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Zevyron{% endblock %}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Outfit&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="selection:bg-primary/30 relative">
+
+    <!-- NAVBAR (directement ici, pas séparée) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 py-6">
+        <div id="nav-container" class="container mx-auto px-6 flex justify-between items-center">
+            <span class="font-display font-bold text-xl text-white">ZEVYRON</span>
+        </div>
+    </nav>
+
+    <!-- CONTENU -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- JS -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

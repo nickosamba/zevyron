@@ -10,36 +10,36 @@ class MembreEquipe(models.Model):
     nom = models.CharField(max_length=100)
     poste = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    photo = models.ImageField(upload_to='equipe/', blank=True, null=True)
-    #photo = CloudinaryField('image', blank=True, null=True)
+    #photo = models.ImageField(upload_to='equipe/', blank=True, null=True)
+    photo = CloudinaryField('image', blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
 
-    # def compress_image(self):
-    #     if self.photo and hasattr(self.photo, 'file'):
-    #         try:
-    #             # Lire le fichier uploadé AVANT Cloudinary
-    #             original = self.photo.file.read()
+    def compress_image(self):
+        if self.photo and hasattr(self.photo, 'file'):
+            try:
+                # Lire le fichier uploadé AVANT Cloudinary
+                original = self.photo.file.read()
 
-    #             # Compression Tinify
-    #             source = tinify.from_buffer(original)
-    #             compressed = source.to_buffer()
+                # Compression Tinify
+                source = tinify.from_buffer(original)
+                compressed = source.to_buffer()
 
-    #             # Remplacer le fichier par la version compressée
-    #             self.photo.save(self.photo.name, ContentFile(compressed), save=False)
+                # Remplacer le fichier par la version compressée
+                self.photo.save(self.photo.name, ContentFile(compressed), save=False)
 
-    #             print("✅ Image compressée avec Tinify")
+                print("✅ Image compressée avec Tinify")
 
-    #         except Exception as e:
-    #             print("❌ Erreur Tinify :", e)
+            except Exception as e:
+                print("❌ Erreur Tinify :", e)
 
-    # def save(self, *args, **kwargs):
-    #     # Si nouvelle image → compresser avant upload Cloudinary
-    #     if self.pk is None or 'photo' in self.__dict__:
-    #         self.compress_image()
+    def save(self, *args, **kwargs):
+        # Si nouvelle image → compresser avant upload Cloudinary
+        if self.pk is None or 'photo' in self.__dict__:
+            self.compress_image()
 
-    #     super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Membre de l'équipe"
@@ -55,27 +55,27 @@ class Projet(models.Model):
     sous_titre = models.CharField(max_length=255, blank=True)
     description = models.TextField()
     categorie = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(upload_to='projets/', blank=True, null=True)
-    #image = CloudinaryField('image', blank=True, null=True)
+    #image = models.ImageField(upload_to='projets/', blank=True, null=True)
+    image = CloudinaryField('image', blank=True, null=True)
     lien_demo = models.URLField(blank=True, null=True)
     lien_github = models.URLField(blank=True, null=True)
     date_publication = models.DateField(auto_now_add=True)
 
-    # def compress_image(self):
-    #     if self.image and hasattr(self.image, 'file'):
-    #         try:
-    #             original = self.image.file.read()
-    #             source = tinify.from_buffer(original)
-    #             compressed = source.to_buffer()
-    #             self.image.save(self.image.name, ContentFile(compressed), save=False)
-    #             print("✅ Image projet compressée avec Tinify")
-    #         except Exception as e:
-    #             print("❌ Erreur Tinify :", e)
+    def compress_image(self):
+        if self.image and hasattr(self.image, 'file'):
+            try:
+                original = self.image.file.read()
+                source = tinify.from_buffer(original)
+                compressed = source.to_buffer()
+                self.image.save(self.image.name, ContentFile(compressed), save=False)
+                print("✅ Image projet compressée avec Tinify")
+            except Exception as e:
+                print("❌ Erreur Tinify :", e)
 
-    # def save(self, *args, **kwargs):
-    #     if self.pk is None or 'image' in self.__dict__:
-    #         self.compress_image()
-    #     super().save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        if self.pk is None or 'image' in self.__dict__:
+            self.compress_image()
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Projet"

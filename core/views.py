@@ -52,13 +52,18 @@ def contact(request):
             sujet = form.cleaned_data["sujet"]
             message = form.cleaned_data["message"]
 
-            contenu = f"Nom : {nom}\nEmail : {email}\n\nMessage :\n{message}"
+            contenu = ( 
+                f"Nom : {nom}\n\n" 
+                f"Email : {email}\n\n" 
+                f"Sujet : {sujet}\n\n" 
+                f"Message : {message}" 
+            )
 
             send_mail(
                 subject="Nouveau message depuis le site Zevyron",
                 message=contenu,
-                from_email=email,
-                recipient_list=["tonemail@gmail.com"],
+                from_email="zevyrondigital@alwaysdata.net",
+                recipient_list=["3x.ingenieur@gmail.com"],
             )
 
             return redirect('contact_success')

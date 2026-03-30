@@ -11,7 +11,7 @@ from django.views.decorators.cache import cache_page
 def home(request):
     return render(request, 'core/index.html')
 
-@cache_page(60 * 15)  # 15 minutes
+# @cache_page(60 * 15)  # 15 minutes
 def services(request):
     return render(request, 'core/services.html')
 
